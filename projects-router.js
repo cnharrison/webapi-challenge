@@ -26,6 +26,22 @@ router.get("/", (req, res) => {
         res.status(500).send({ error: "The project could not be retrieved." })
       );
   });
+
+  router.get("/actions/:id", (req, res) => {
+    const { id } = req.params;
+    db.getProjectActions(id)
+      .then(actions => {
+        if (!actions) {
+          res.status(404).json({
+            message: "There aren't any actions for this project."
+          });
+        }
+        res.status(201).json(actions);
+      })
+      .catch(err =>
+        res.status(500).send({ error: "The project actions could not be retrieved." })
+      );
+  });
   
   router.post("/", (req, res) => {
     const { name, description, completed} = req.body;
