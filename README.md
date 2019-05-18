@@ -25,14 +25,26 @@ In this challenge, create a web API around the following resources: `Projects` a
 Demonstrate your understanding of this Sprint's concepts by answering the following free-form questions. Edit this document to include your answers after each question. Make sure to leave a blank line above and below your answer so it is clear and easy to read by your project manager.
 
 - [ ] Mention two parts of Express that you learned about this week.
+the homies, req and res
+
+req: object conataining info about the HTTP request that came from the client app
+
+res: is our response, we gonna build it, it contins lots of built in methods from express that help us build it 
 
 - [ ] Describe Middleware?
 
+a middleware is just a function that has access to req and res and next. its gonna execute some code or maybe terminate or continue the req/res cycle
+
 - [ ] Describe a Resource?
 
+a resource is an object that we can do CRUD operations on
+
 - [ ] What can the API return to help clients know if a request was successful?
+a http response code in the 200 series
 
 - [ ] How can we partition our application into sub-applications?
+
+use an router for each resource!!
 
 ## Project Setup
 
@@ -109,5 +121,3 @@ Now that we have a way to add, update, remove and retrieve data from the provide
 - From the React application show a list of all _projects_ using the API you built.
 - Add functionality to show the details of a project, including its actions, when clicking a project name in the list. Use React Router to navigate to a separate route to show the project details.
 - Add styling! Perhaps with [`styled-components`](https://www.styled-components.com/).
-
-change for initial commit 🤠💯👌
