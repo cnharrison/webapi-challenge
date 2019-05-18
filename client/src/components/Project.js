@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import Action from "./Action"
+import Action from "./Action";
 
 class Project extends Component {
   state = {
@@ -21,15 +21,16 @@ class Project extends Component {
   render() {
     return (
       <div>
-        <div className="theName" onClick={this.handleClickName}>
+        <h1 className="theName" onClick={this.handleClickName}>
           {this.props.name}
-        </div>
+        </h1>
         {this.state.nameClicked && (
           <div>
-            <p> id: {this.props.id}</p>
-            <p>description: {this.props.description}</p>
-            <p>completed? {this.props.completed} </p>
             <p>
+              {" "}
+              id: {this.props.id}
+              description: {this.props.description}
+              completed? {this.props.completed}
               actions:{" "}
               {this.state.actions.map(action => {
                 return (
